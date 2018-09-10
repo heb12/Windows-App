@@ -1,15 +1,5 @@
 <html><head>
-        <script>
-            var require = {
-    get: function (site,callback) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.open('GET', site, true);
-        xhttp.send();
-    }
-};
-             require("https://heb12.ml/Windows-App/bible.json",function(data){bible=data;});
-        </script>
-        <script src="https://heb12.ml/Windows-App/getVerse.js"></script>
+        
         </head>
         <body>
         <select id="book">
@@ -28,4 +18,15 @@
                 
                 </div>
         </body>
+        <script>
+            var require = {
+    get: function (site,callback) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open('GET', site, true);
+        xhttp.send();
+    }
+};
+             require("https://heb12.ml/Windows-App/bible.json",function(data){bible=data;});
+        </script>
+        <script src="https://heb12.ml/Windows-App/getVerse.js"></script>
        </html>
