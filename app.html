@@ -20,5 +20,14 @@
         <select id="chap">
         <option value="1">1</option>
         </select>
+                <button>Go!</button>
+                <script>
+                document.getElementsByTagName("button")[0].addEventListener("click",function() {
+                document.getElementById("verseArea").innerHTML = getVerse(document.getElementById("book").value+" "+document.getElementById("chap").value+":1").chapter;
+                });
+                </script>
+                <div id="verseArea">
+                
+                </div>
         </body>
        </html>
