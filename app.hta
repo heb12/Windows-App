@@ -22,7 +22,7 @@
         </select>
                 <button>Go!</button>
                 <script>
-                document.getElementsByTagName("button")[0].addEventListener("click",function() {
+                document.getElementsByTagName("button")[0].onclick=(function() {
                 document.getElementById("verseArea").innerHTML = getVerse(document.getElementById("book").value+" "+document.getElementById("chap").value+":1").chapter;
                 });
                 </script>
