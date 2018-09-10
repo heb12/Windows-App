@@ -3,7 +3,7 @@ var data = string.split(" ");
 var book = "";
 var i = 0;
 while(data[i].split(":").length <= 1) {
-book+=data[i]+" ";
+book+=data[i];
   i++;
 }
 var chapter = Number(data[i].split(":")[0]);
