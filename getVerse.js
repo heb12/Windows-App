@@ -12,7 +12,7 @@ var obj = new Object();
 obj.verse = bible[book][chapter-1][verse-1];
   var cc = "";
   for(var a=0; a<bible[book][chapter-1].length; a++) {
-  cc+=a+1+") "+bible[book][chapter-1][a];
+  cc+=a+1+") "+bible[book][chapter-1][a]+" ";
   }
   obj.chapter = cc;
   return obj;
