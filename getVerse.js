@@ -10,4 +10,5 @@ var chapter = Number(data[i].split(":")[0]);
 var verse = Number(data[i].split(":")[1]);
 var obj = new Object();
 obj.verse = bible[book][chapter][verse];
+  return obj;
 }
