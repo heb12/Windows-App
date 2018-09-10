@@ -2,8 +2,9 @@ function getVerse(string) {
 var data = string.split(" ");
 var book = "";
 var i = 0;
-for(i=0; data[i].split(":").length > 1; i++) {
+while(data[i].split(":").length <= 1) {
 book+=data[i]+" ";
+  i++;
 }
 var chapter = Number(data[i].split(":")[0]);
 var verse = Number(data[i].split(":")[1]);
