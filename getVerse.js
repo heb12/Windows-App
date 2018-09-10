@@ -9,6 +9,6 @@ book+=data[i];
 var chapter = Number(data[i].split(":")[0]);
 var verse = Number(data[i].split(":")[1]);
 var obj = new Object();
-obj.verse = bible[book][chapter][verse];
+obj.verse = bible[book][chapter-1][verse-1];
   return obj;
 }
