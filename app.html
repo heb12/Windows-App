@@ -1,5 +1,5 @@
 <html><head>
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         </head>
         <body>
         <select id="book">
@@ -20,12 +20,16 @@
         </body>
         <script>
                 var bible;
-            var require = function (site,callback) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.open('GET', site, true);
-        xhttp.send();
-    };
-             require("https://heb12.ml/Windows-App/bible.json",function(data){bible=data;});
+            $.noConflict
+            function require(url) {
+                var rtrn
+             jQuery.ajax({async:false,url: url, success: function(result){
+                if(url.search(".json")!==-1) {rtrn= result;} else if(url.search(".js")!==-1) {rtrn= eval("function() {"+result+"}");} else {
+            rtrn= result;
+                }
+        }});return rtrn;
+            }
+             bible=require("https://heb12.ml/Windows-App/bible.json");
         </script>
         <script src="https://heb12.ml/Windows-App/getVerse.js"></script>
        </html>
