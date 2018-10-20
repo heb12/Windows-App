@@ -22,8 +22,9 @@
                 var bible;
             $.noConflict
             function require(url) {
+                    var reqURL = url;
                 var rtrn
-             jQuery.ajax({async:false,url: url, success: function(result){
+             jQuery.ajax({async:false,url: url, error: function() {console.error(new Error("Can't access Heb12 website. Reverting to offline data."));rtrn=require(reqURL.split("/")[reqURL.split("/").length-1]);}, success: function(result){
                 if(url.search(".json")!==-1) {rtrn= result;} else if(url.search(".js")!==-1) {rtrn= eval("function() {"+result+"}");} else {
             rtrn= result;
                 }
@@ -31,5 +32,5 @@
             }
              bible=require("https://heb12.ml/Windows-App/bible.json");
         </script>
-        <script src="https://heb12.ml/Windows-App/getVerse.js"></script>
+        <script src="getVerse.js"></script>
        </html>
