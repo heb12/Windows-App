@@ -24,7 +24,7 @@
             function require(url) {
                     var reqURL = url;
                 var rtrn
-             jQuery.ajax({async:false,url: url, error: function() {console.error(new Error("Can't access Heb12 website. Reverting to offline data."));rtrn=require(reqURL.split("/")[reqURL.split("/").length-1]);}, success: function(result){
+             jQuery.ajax({async:false,url: url, error: function() {console.error(new Error("Can't access Heb12 website. Reverting to offline data."));/*rtrn=require(reqURL.split("/")[reqURL.split("/").length-1]);*/var s=document.createElement("SCRIPT");s.setAttribute("src","fromJSON.js");document.body.appendChild(s);}, success: function(result){
                 if(url.search(".json")!==-1) {rtrn= result;} else if(url.search(".js")!==-1) {rtrn= eval("function() {"+result+"}");} else {
             rtrn= result;
                 }
